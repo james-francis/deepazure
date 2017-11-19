@@ -120,7 +120,7 @@ coffee.flavor = 'vanilla'
 coffee.size = 'medium'
 coffee.cost = 3.50
 table_service.insert_entity('itemstable', coffee)
-print('Created entry for a starbucks...\n')
+print('Created entry for a starbucks...')
 time.sleep(1)
 
 coffee = Entity()
