@@ -146,16 +146,16 @@ raw_input('Press Enter to continue...')
 items = table_service.query_entities('itemstable', filter="PartitionKey eq 'dealership'", select='make,model,year,color,cost')
 for item in items:
     print('Make: ' + item.make)
-    print('Model: ' + item.model + '\n')
-    print('Year: ' + str(item.year) + '\n')
-    print('Color: ' + item.color + '\n')
+    print('Model: ' + item.model)
+    print('Year: ' + str(item.year))
+    print('Color: ' + item.color)
     print('Cost: ' + str(item.cost) + '\n')
 
 items = table_service.query_entities('itemstable', filter="PartitionKey eq 'coffeeshop'", select='brand,flavor,size,cost')
 for item in items:
     print('Brand: ' + item.brand)
-    print('Flavor: ' + item.flavor + '\n')
-    print('Size: ' + str(item.size) + '\n')
+    print('Flavor: ' + item.flavor)
+    print('Size: ' + str(item.size))
     print('Cost: ' + str(item.cost) + '\n')
     
 time.sleep(1)
