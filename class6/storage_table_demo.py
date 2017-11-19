@@ -160,21 +160,27 @@ for item in items:
     
 time.sleep(1)
 
+print('\nThis is a basic example of how Azure Storage Tables behave like a database.')
+
 ###
 # This was a quick demo to see Tables in action.
+###
+
 # Although the actual cost is minimal (fractions of a cent per month) for the three entities we created, it's good to clean up resources when you're done
 ###
-print('\nThis is a basic example of how Azure Storage Tables behave like a database.\nTo keep things tidy, let\'s clean up the Azure Storage resources we created.')
-raw_input('Press Enter to continue...')
+def cleanup():
+    print('To keep things tidy, let\'s clean up the Azure Storage resources we created.')
+    raw_input('Press Enter to continue...')
 
-response = table_service.delete_table('itemstable')
-if response == True:
-    print('Storage table: itemstable deleted successfully.')
-else:
-    print('Error deleting Storage Table')
+    response = table_service.delete_table('itemstable')
+    if response == True:
+        print('Storage table: itemstable deleted successfully.')
+    else:
+        print('Error deleting Storage Table')
 
-response = azurerm.delete_resource_group(auth_token, subscription_id, resourcegroup_name)
-if response.status_code == 202:
-    print('Resource group: ' + resourcegroup_name + ' deleted successfully.')
-else:
-    print('Error deleting resource group.')
+    response = azurerm.delete_resource_group(auth_token, subscription_id, resourcegroup_name)
+    if response.status_code == 202:
+        print('Resource group: ' + resourcegroup_name + ' deleted successfully.')
+    else:
+        print('Error deleting resource group.')
+
